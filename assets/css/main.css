@@ -6244,7 +6244,8 @@ section,
 /*--------------------------------------------------------------
 # About Us Page (redesign) - scoped to .about-page
 --------------------------------------------------------------*/
-.about-page {
+.about-page,
+.index-page {
   --ab-hairline: color-mix(in srgb, var(--default-color), transparent 85%);
   --ab-muted: color-mix(in srgb, var(--default-color), transparent 25%);
   --ab-tint: color-mix(in srgb, var(--accent-color), transparent 92%);
@@ -6685,7 +6686,7 @@ section,
 }
 
 /* Clients (same grey-to-colour logo behaviour as the original certification tiles) */
-.about-page .ab-logos {
+:is(.about-page, .index-page) .ab-logos {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -6695,13 +6696,13 @@ section,
 }
 
 @media (min-width: 768px) {
-  .about-page .ab-logos {
+  :is(.about-page, .index-page) .ab-logos {
     grid-template-columns: repeat(4, 1fr);
     gap: 1.25rem;
   }
 }
 
-.about-page .ab-logo {
+:is(.about-page, .index-page) .ab-logo {
   height: 128px;
   padding: 1.25rem;
   display: flex;
@@ -6713,12 +6714,12 @@ section,
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.about-page .ab-logo:hover {
+:is(.about-page, .index-page) .ab-logo:hover {
   border-color: transparent;
   box-shadow: 0 10px 30px color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
-.about-page .ab-logo img {
+:is(.about-page, .index-page) .ab-logo img {
   max-width: 85%;
   max-height: 64px;
   width: auto;
@@ -6728,13 +6729,13 @@ section,
   transition: filter 0.3s ease, opacity 0.3s ease;
 }
 
-.about-page .ab-logo:hover img {
+:is(.about-page, .index-page) .ab-logo:hover img {
   filter: none;
   opacity: 1;
 }
 
 @media (hover: none) {
-  .about-page .ab-logo img {
+  :is(.about-page, .index-page) .ab-logo img {
     filter: none;
     opacity: 1;
   }
@@ -6882,7 +6883,7 @@ section,
     padding: 1.5rem;
   }
 
-  .about-page .ab-logo {
+  :is(.about-page, .index-page) .ab-logo {
     height: 108px;
     padding: 1rem;
   }
@@ -6899,5 +6900,60 @@ section,
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+  }
+}
+
+/*--------------------------------------------------------------
+# Homepage Footer alignment
+--------------------------------------------------------------*/
+.index-page .footer-16 .footer-main {
+  margin-bottom: 50px;
+}
+
+.index-page .footer-16 .brand-section {
+  text-align: center;
+}
+
+.index-page .footer-16 .brand-section .brand-description {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.index-page .footer-16 .brand-section .contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 40px;
+  text-align: left;
+}
+
+.index-page .footer-16 .brand-section .contact-info .contact-item {
+  margin-bottom: 0;
+  align-items: center;
+}
+
+.index-page .footer-16 .brand-section .contact-info .contact-item i {
+  margin-top: 0;
+}
+
+.index-page .footer-16 .footer-bottom {
+  padding: 0 0 30px;
+}
+
+.index-page .footer-16 .footer-bottom .bottom-content {
+  padding-top: 30px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+@media (max-width: 768px) {
+  .index-page .footer-16 .brand-section .contact-info {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .index-page .footer-16 .brand-section .contact-info .contact-item {
+    align-items: flex-start;
   }
 }
