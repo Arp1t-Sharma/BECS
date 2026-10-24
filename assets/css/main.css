@@ -6240,3 +6240,664 @@ section,
   padding-bottom: 60px;
   /* Add your styles here */
 }
+
+/*--------------------------------------------------------------
+# About Us Page (redesign) - scoped to .about-page
+--------------------------------------------------------------*/
+.about-page {
+  --ab-hairline: color-mix(in srgb, var(--default-color), transparent 85%);
+  --ab-muted: color-mix(in srgb, var(--default-color), transparent 25%);
+  --ab-tint: color-mix(in srgb, var(--accent-color), transparent 92%);
+  --ab-shadow: 0 20px 60px color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+.about-page .about .stats-grid .stat-item .stat-number::after {
+  content: "+";
+}
+
+.about-page .ab-band {
+  padding: 100px 0;
+}
+
+.about-page .ab-head {
+  max-width: 640px;
+  margin: 0 auto 4rem;
+  text-align: center;
+}
+
+.about-page .ab-head h3,
+.about-page .ab-title {
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.about-page .ab-lede {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin: 0;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+/* Shared icon treatments (same tinted-circle language as the original page) */
+.about-page .ab-icon {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+  font-size: 1.5rem;
+}
+
+.about-page .ab-icon--lg {
+  width: 80px;
+  height: 80px;
+  font-size: 2rem;
+  margin: 0 auto 1.5rem;
+}
+
+.about-page .ab-icon--sq {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  font-size: 1.3rem;
+}
+
+/* Buttons (pill shape, matching the homepage hero buttons) */
+.about-page .ab-btn {
+  display: inline-block;
+  padding: 0.8rem 1.75rem;
+  border-radius: 50px;
+  border: 2px solid transparent;
+  font-weight: 500;
+  line-height: 1.2;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.about-page .ab-btn--outline {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.about-page .ab-btn--outline:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.about-page a:focus-visible,
+.about-page .ab-btn:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+/* Mission & Vision */
+.about-page .ab-mv-item {
+  padding: 0.5rem 0;
+}
+
+.about-page .ab-mv-item h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 1.25rem 0 1rem;
+}
+
+.about-page .ab-mv-item p {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--heading-color);
+}
+
+.about-page .ab-mv-item + .ab-mv-item {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--ab-hairline);
+}
+
+@media (min-width: 992px) {
+  .about-page .ab-mv-item:first-child {
+    padding-right: 4rem;
+  }
+
+  .about-page .ab-mv-item + .ab-mv-item {
+    margin-top: 0;
+    padding-top: 0.5rem;
+    padding-left: 4rem;
+    border-top: 0;
+    border-left: 1px solid var(--ab-hairline);
+  }
+}
+
+/* Core values */
+.about-page .ab-value {
+  text-align: center;
+  padding: 0 0.25rem;
+}
+
+.about-page .ab-value h4 {
+  font-size: 1.15rem;
+  font-weight: 400;
+  line-height: 1.35;
+  margin-bottom: 0.75rem;
+}
+
+.about-page .ab-value p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ab-muted);
+}
+
+/* Services overview */
+@media (min-width: 992px) {
+  .about-page .ab-sticky {
+    position: sticky;
+    top: 110px;
+  }
+}
+
+.about-page .ab-photo {
+  margin: 2rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--ab-shadow);
+}
+
+.about-page .ab-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.about-page .ab-service-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--ab-hairline);
+}
+
+.about-page .ab-service {
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid var(--ab-hairline);
+}
+
+.about-page .ab-service h4 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0 0 0.5rem;
+}
+
+.about-page .ab-service p {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--ab-muted);
+}
+
+/* Why choose BECS */
+.about-page .ab-why-item {
+  display: flex;
+  gap: 1.1rem;
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--ab-hairline);
+  height: 100%;
+}
+
+.about-page .ab-why-item h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 0 0.4rem;
+}
+
+.about-page .ab-why-item p {
+  margin: 0;
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: var(--ab-muted);
+}
+
+/* Audit process (a true sequence, so it is numbered) */
+.about-page .ab-steps {
+  --ab-gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+.about-page .ab-step {
+  position: relative;
+  padding-left: 4rem;
+}
+
+.about-page .ab-step-num {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  font-family: var(--heading-font);
+  font-size: 1.1rem;
+  font-weight: 500;
+  z-index: 1;
+}
+
+.about-page .ab-step:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 21px;
+  top: 52px;
+  bottom: -2rem;
+  width: 2px;
+  background: color-mix(in srgb, var(--accent-color), transparent 75%);
+}
+
+.about-page .ab-step h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0.55rem 0 0.5rem;
+}
+
+.about-page .ab-step p {
+  margin: 0;
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: var(--ab-muted);
+}
+
+@media (min-width: 992px) {
+  .about-page .ab-steps {
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: var(--ab-gap);
+  }
+
+  .about-page .ab-step {
+    padding-left: 0;
+    padding-top: 4rem;
+  }
+
+  .about-page .ab-step:not(:last-child)::before {
+    left: 56px;
+    right: calc(-1 * var(--ab-gap) + 12px);
+    top: 21px;
+    bottom: auto;
+    width: auto;
+    height: 2px;
+  }
+
+  .about-page .ab-step h4 {
+    margin-top: 0;
+  }
+}
+
+/* Leadership */
+.about-page .ab-person {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.about-page .ab-person-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: var(--ab-shadow);
+  margin-bottom: 1.25rem;
+}
+
+.about-page .ab-person h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0 0 0.25rem;
+}
+
+.about-page .ab-role {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--accent-color);
+}
+
+.about-page .ab-creds {
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ab-muted);
+}
+
+.about-page .ab-exp {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: var(--ab-tint);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--heading-color);
+}
+
+.about-page .ab-staff {
+  margin-top: 4rem;
+  padding: 2rem 2.5rem;
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--accent-color), transparent 97%);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 2.5rem;
+}
+
+.about-page .ab-staff h4,
+.about-page .ab-sectors h4 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin: 0;
+}
+
+.about-page .ab-chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.about-page .ab-chips li {
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  background: var(--surface-color);
+  border: 1px solid var(--ab-hairline);
+  font-size: 0.95rem;
+  color: var(--heading-color);
+}
+
+/* Certifications */
+.about-page .ab-cert-panel {
+  background: var(--surface-color);
+  border-radius: 16px;
+  box-shadow: var(--ab-shadow);
+  overflow: hidden;
+}
+
+.about-page .ab-cert {
+  padding: 2.25rem 2rem;
+  border-top: 1px solid var(--ab-hairline);
+}
+
+.about-page .ab-cert h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 1.25rem 0 0.6rem;
+}
+
+.about-page .ab-cert p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ab-muted);
+}
+
+.about-page .ab-cert-panel .row > .ab-cert:first-child {
+  border-top: 0;
+}
+
+@media (min-width: 768px) {
+  .about-page .ab-cert-panel .row > .ab-cert:nth-child(2) {
+    border-top: 0;
+  }
+
+  .about-page .ab-cert-panel .row > .ab-cert:nth-child(even) {
+    border-left: 1px solid var(--ab-hairline);
+  }
+}
+
+@media (min-width: 992px) {
+  .about-page .ab-cert-panel .row > .ab-cert {
+    border-top: 0;
+  }
+
+  .about-page .ab-cert-panel .row > .ab-cert + .ab-cert {
+    border-left: 1px solid var(--ab-hairline);
+  }
+}
+
+/* Clients (same grey-to-colour logo behaviour as the original certification tiles) */
+.about-page .ab-logos {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .about-page .ab-logos {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+.about-page .ab-logo {
+  height: 128px;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-color);
+  border: 1px solid var(--ab-hairline);
+  border-radius: 12px;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.about-page .ab-logo:hover {
+  border-color: transparent;
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--default-color), transparent 85%);
+}
+
+.about-page .ab-logo img {
+  max-width: 85%;
+  max-height: 64px;
+  width: auto;
+  height: auto;
+  filter: grayscale(100%);
+  opacity: 0.75;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.about-page .ab-logo:hover img {
+  filter: none;
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .about-page .ab-logo img {
+    filter: none;
+    opacity: 1;
+  }
+}
+
+.about-page .ab-also {
+  margin: 2rem 0 0;
+  text-align: center;
+  color: var(--ab-muted);
+}
+
+.about-page .ab-sectors {
+  margin-top: 3.5rem;
+  text-align: center;
+}
+
+.about-page .ab-sectors h4 {
+  margin-bottom: 1rem;
+}
+
+.about-page .ab-sectors .ab-chips {
+  justify-content: center;
+}
+
+.about-page .ab-sectors .ab-chips li {
+  background: var(--ab-tint);
+  border-color: transparent;
+}
+
+/* Closing contact band */
+.about-page .ab-cta {
+  --background-color: var(--heading-color);
+  --default-color: rgba(255, 255, 255, 0.82);
+  --surface-color: rgba(255, 255, 255, 0.08);
+  color: var(--default-color);
+}
+
+.about-page .ab-cta h3 {
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.about-page .ab-cta-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.about-page .ab-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.about-page .ab-btn--solid {
+  background: #ffffff;
+  color: var(--heading-color);
+}
+
+.about-page .ab-btn--solid:hover {
+  background: color-mix(in srgb, #ffffff, transparent 12%);
+  color: var(--heading-color);
+}
+
+.about-page .ab-btn--ghost {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.about-page .ab-btn--ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.about-page .ab-contact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.about-page .ab-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.about-page .ab-contact li:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.about-page .ab-contact i {
+  flex: 0 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.about-page .ab-contact span {
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.about-page .ab-contact a {
+  color: #ffffff;
+}
+
+.about-page .ab-contact a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.about-page .ab-cta a:focus-visible {
+  outline-color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .about-page .ab-band {
+    padding: 70px 0;
+  }
+
+  .about-page .ab-head {
+    margin-bottom: 3rem;
+  }
+
+  .about-page .ab-head h3,
+  .about-page .ab-title,
+  .about-page .ab-cta h3 {
+    font-size: 1.9rem;
+  }
+
+  .about-page .ab-mv-item p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .about-page .ab-staff {
+    padding: 1.5rem;
+  }
+
+  .about-page .ab-logo {
+    height: 108px;
+    padding: 1rem;
+  }
+
+  .about-page .ab-cta-actions .ab-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Respect reduced motion: show content immediately */
+@media (prefers-reduced-motion: reduce) {
+  .about-page [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
